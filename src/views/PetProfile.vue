@@ -15,6 +15,10 @@
         <label>Nome</label>
         <input v-model="name" data-test="input-name"/>
       </div>
+       <div class="input-form">
+        <label>CPF</label>
+        <input v-model="cpf"/>
+      </div>
       <div class="input-form">
         <label>Contato</label>
         <input v-model="contact" data-test="input-contact" />
@@ -43,7 +47,8 @@ export default {
       name: '',
       email: '',
       contact: '',
-      observations: ''
+      observations: '',
+      cpf: ''
     }
   },
   methods: {
@@ -52,7 +57,9 @@ export default {
         name: this.name,
         email: this.email,
         contact: this.contact,
-        observations: this.observations
+        observations: this.observations,
+        pet_id:  this.$route.params.id,
+        cpf: this.cpf
       })
         .then(() => {
           alert('Cadastrado com sucesso')
